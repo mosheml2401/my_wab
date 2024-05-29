@@ -1,0 +1,135 @@
+/*  כלפי פנים דבר עם כל התגיות כגון דיויים  */
+*{
+    box-sizing: border-box;
+}
+/* גופן */
+body{
+    background: silver;
+    margin: 0;
+    font-family: sans-serif;   
+}
+/* קלס מימין ושמאל 16 פיקסלים */
+/* קונטיינר פלויד זה על כל הדף */
+.container-fluid{
+    width: 100%;
+    /* מימין ושמאל רווח של 16 פיקסלים */
+    padding: 0 16px;
+}
+/*   ערך 1000 בשביל רספונסיביות */
+ /* תומך רק בחלק מהדף קונטיינר  */
+.container{
+    max-width: 1000px;
+    /* כדי שיהיה באמצע */
+    margin: 0 auto;
+}
+/* רחוב הוא מינימום 80 פיקסלים */
+/* header גודל יחד עם הילדים שלו */
+header{
+    /* min כדי שיגדל יחד עם הילדים שלו */
+    min-height: 80px;
+    background: white;
+}
+/* אני קורא רק לקונטיינר של ההדר */
+header .container{
+    /* מרווח ליד בין הלוגו לקורות חיים */
+    display: flex;
+    /*  מגדיר את הרוחב,שיהיה בקצה של הנאב*/
+    justify-content:space-between ;
+    /* גובה באמצע */
+    align-items: center;
+}
+/* מגדירם את התוכן עניינים בצבע  */
+header nav a{
+    color: #333;
+    /*  התחתון מבטל את הקו */
+    text-decoration: none;
+    /* מרווחים ביניהם */
+    padding: 0 12px;
+}
+/* כשנכנסים עם עכבר */
+header nav a:hover{
+    color: orange;
+    text-decoration:underline ;
+}
+.strip{
+    /* שהילדים לא יהיו גדולים מהאבא */
+    min-width: 300px;
+    background: #777;
+}
+main{
+    min-width: 200px;
+    background: #eee;
+}
+
+header .burger{
+    display: none;
+}
+.strip{
+    min-height: 300px;
+    background: #777;
+}
+.strip .container{
+    max-width: 400px;
+    /* מדבר עם האבא שיש לו 300 פיקסל */
+    min-height: inherit;
+    padding: 8px;
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+}
+.strip button{
+    background: #333;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 30px;
+}
+.strip button:hover{
+    background: orange;
+}
+main{
+    min-height: 200px;
+    background: #eee;
+    position: relative;
+}
+main .half-grey{
+    position: absolute;
+    top:0;
+    left: o;
+    width: 100%;
+    height: 100px;
+    background: #777;
+
+}
+main .container{
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+main .box{
+    width: 45%;
+    background: white;
+    text-align: center;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+    z-index: 99;
+    
+}
+@media (max-width:728px){
+    header .logo img{
+        width: 100%;
+
+    }
+    header nav{
+        display: none;
+    }
+    header .burger{
+        display: block;
+    }
+    main .box{
+    width: 100%;
+    margin-bottom: 24px;
+   } 
+}
